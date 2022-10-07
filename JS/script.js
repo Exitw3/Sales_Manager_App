@@ -59,11 +59,11 @@ function calculator() {
     let totalinventory = 0;
     let totalmoney = 0;
     for (let can of managetors) {
-        totalinventory += can.inventory;
-        totalmoney += can.money;
+        totalinventory += parseInt(can.inventory);
+        totalmoney += parseInt(can.money);
     }
     document.getElementById('suminventory').innerHTML = totalinventory;
-    document.getElementById('summoney').innerHTML = totalmoney * totalinventory;
+    document.getElementById('summoney').innerHTML = totalmoney * totalinventory + "$";
 }
 
 
