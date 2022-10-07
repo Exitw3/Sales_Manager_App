@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage App</title>
+    <link rel="icon" href="images/logo.png">
+    <link rel="stylesheet" href="Css/manage.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="create-manage">
+                <h2 class="heading-2">Managetor</h2>
+                <div class="create-area">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="avatar">Avatar URL</label>
+                            <input
+                                value="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/33.jpg"
+                                class="form-control" type="url" id="avatar">
+                            <input type="hidden" id="manageId" value="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input class="form-control" type="text" id="name">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="inventory">Inventory</label>
+                            <input class="form-control" type="number" id="inventory">
+                        </div>
+                        <div class="form-group">
+                            <label for="money">Into Money</label>
+                            <input class="form-control" type="number" id="money">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button id="btnCreate" onclick="saveManagetor()" class="btn btn-dark">Create</button>
+                    <button id="btnUpdate" onclick="updateManagetor()" class="btn btn-danger d-none">Save</button>
+                    <button onclick="resetForm()" class="btn btn-warning">Cancel</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="show-manage">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Avatar</th>
+                            <th>Name</th>
+                            <th>Inventory
+                                <span class="sort" title="ascending" onclick="ascending('inventory')">&#9650;</span>
+                                <span class="sort" title="descending" onclick="descending('inventory')">&#9660;</span>
+                            </th>
+                            <th>Into Money
+                                <span class="sort" title="ascending" onclick="ascending('money')">&#9650;</span>
+                                <span class="sort" title="descending" onclick="descending('money')">&#9660;</span>
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbManage">
+
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="2">Tổng cộng</th>
+                            <th id="suminventory" class="text-right"></th>
+                            <th id="summoney" class="text-right"></th>
+                            <th></th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="paging-area">
+                <ul id="pagination">
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="JS/script.js"></script>
+</body>
+
+</html>
